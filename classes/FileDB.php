@@ -23,6 +23,7 @@ class FileDB {
     //konstruktorius pasileidia kai sukuriame objekta pasileidzia 
     //magiskas metodas nes pats issikviecia objekto sukurimo metu
    // viena karta pasinaudoji ir viskas 
+   // padarp  tik fime name nebe nu;;
     public function __construct($file_name) {
         $this->file_name = $file_name;
     }
@@ -32,6 +33,8 @@ class FileDB {
 //metodas load this data yra $data ir sita variabla mes pripildysim 
    // $file_name kelias iki tekstinio failo (nerasom kelio data,txt kad butu universalus
    // i ta data patalpina
+   // load pakoreguoja data bus ka grazins ta funkcja 
+  //  load pripildo objekta patie sobjekto variabla dada
     public function load() {
         $this->data = file_to_array($this->file_name);
     }
@@ -45,6 +48,7 @@ class FileDB {
     
     
     //returnina viska kas bus viduje private $data grazins ta arrey
+    //gauna data 
     public function getData() {
         return $this->data;
     }
